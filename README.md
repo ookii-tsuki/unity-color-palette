@@ -46,3 +46,10 @@ An example image with its vibrant-colored toolbar and corresponding title text c
 </p>
 
 ## Preview
+ These are some preview images from the Unity Editor
+ <p align="center">
+<img src="https://developer.android.com/training/material/images/palette-library-color-profiles_2-1_2x.png" width="600" title="Preview 1">
+</p>
+<p align="center">
+<img src="https://developer.android.com/training/material/images/palette-library-color-profiles_2-1_2x.png" width="600" title="Preview 2">
+</p>
