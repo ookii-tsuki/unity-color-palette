@@ -25,6 +25,7 @@ This figure displays a photo and its corresponding color profiles from the `Get<
 <p align="center">
 <img src="https://developer.android.com/training/material/images/palette-library-color-profiles_2-1_2x.png" width="350" title="Figure 1">
 </p>
+
 ```csharp
 MutedColor.color = palette.GetMutedColor();
 VibrantColor.color = palette.GetVibrantColor();
