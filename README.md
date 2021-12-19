@@ -23,7 +23,7 @@ Each of `Palette`'s `Get<Profile>Color()` methods returns the color in the palet
 
 This figure displays a photo and its corresponding color profiles from the `Get<Profile>Color()` methods.
 <p align="center">
-<img src="https://developer.android.com/training/material/images/palette-library-color-profiles_2-1_2x.png" width="350" title="Figure 1">
+<img src="https://developer.android.com/training/material/images/palette-library-color-profiles_2-1_2x.png" width="500" title="Figure 1">
 </p>
 
 ```csharp
@@ -42,7 +42,7 @@ text.color = vibrantColor.GetTitleTextColor();
 ```
 An example image with its vibrant-colored toolbar and corresponding title text color.
 <p align="center">
-<img src="https://developer.android.com/training/material/images/palette-library-title-text-color_2-1_2x.png" width="350" title="Figure 2">
+<img src="https://developer.android.com/training/material/images/palette-library-title-text-color_2-1_2x.png" width="300" title="Figure 2">
 </p>
 
 ## Preview
