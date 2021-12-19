@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Diagnostics;
 using OokiiTsuki.Palette;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,13 @@ public class TestScript : MonoBehaviour
         LightVibrantColor.color = palette.GetLightVibrantColor();
         DarkMutedColor.color = palette.GetDarkMutedColor();
         DarkVibrantColor.color = palette.GetDarkVibrantColor();
-        print(palette.MutedSwatch.ToString());
+
+        MutedColor.transform.GetChild(0).GetComponent<Text>().color = MutedColor.color.GetTitleTextColor();
+        VibrantColor.transform.GetChild(0).GetComponent<Text>().color = VibrantColor.color.GetTitleTextColor();
+        LightMutedColor.transform.GetChild(0).GetComponent<Text>().color = LightMutedColor.color.GetTitleTextColor();
+        LightVibrantColor.transform.GetChild(0).GetComponent<Text>().color = VibrantColor.color.GetTitleTextColor();
+        DarkMutedColor.transform.GetChild(0).GetComponent<Text>().color = VibrantColor.color.GetTitleTextColor();
+        DarkVibrantColor.transform.GetChild(0).GetComponent<Text>().color = VibrantColor.color.GetTitleTextColor();
     }
 
 }
