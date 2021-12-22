@@ -345,7 +345,6 @@ namespace OokiiTsuki.Palette
                     for (int i = lowIndex; i <= highIndex; i++)
                     {
                         int color = colors[i];
-                        //colors[i] = Color.rgb((color >> 8) & 0xFF, (color >> 16) & 0xFF, color & 0xFF);
                         colors[i] = new Color32((byte)color.Green(), (byte)color.Red(), (byte)color.Blue(), 255).ToInt();
                     }
                     break;
@@ -354,7 +353,6 @@ namespace OokiiTsuki.Palette
                     for (int i = lowIndex; i <= highIndex; i++)
                     {
                         int color = colors[i];
-                        //colors[i] = Color.rgb(color & 0xFF, (color >> 8) & 0xFF, (color >> 16) & 0xFF);
                         colors[i] = new Color32((byte)color.Blue(), (byte)color.Green(), (byte)color.Red(), 255).ToInt();
                     }
                     break;
