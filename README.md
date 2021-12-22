@@ -1,6 +1,9 @@
 ## About The Project
  This is a unity library for generating a color palette from an image ported from [Android's Palette API](https://developer.android.com/training/material/palette-colors)
  
+## Installation
+ Download the [Latest release](https://github.com/ookii-tsuki/unity-color-palette/releases) of the unity package and open it while the Unity Editor is open.
+
 ## Create a palette
  A `Palette` object gives you access to the primary colors in an image, as well as the corresponding colors for overlaid text. Use palettes to design your games's style and to dynamically change your games's color scheme based on a given source image.
  
