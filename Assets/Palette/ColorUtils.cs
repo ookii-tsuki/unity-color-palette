@@ -157,19 +157,19 @@ namespace OokiiTsuki.Palette
             if (lightTitleAlpha != -1)
             {
                 // If we found valid light values, use them and return
-                return new Color32(255, 255, 255, (byte)lightTitleAlpha);
+                return new Color32(255, 255, 255, (byte)lightTitleAlpha).OverlayColors(color);
             }
             int darkTitleAlpha = CalculateMinimumAlpha(Color.black, color, MIN_CONTRAST_TITLE_TEXT);
             if (darkTitleAlpha != -1)
             {
                 // If we found valid dark values, use them and return
-                return new Color32(0, 0, 0, (byte)darkTitleAlpha);
+                return new Color32(0, 0, 0, (byte)darkTitleAlpha).OverlayColors(color);
             }
             
 
             return lightTitleAlpha != -1
-                ? new Color32(255, 255, 255, (byte)lightTitleAlpha)
-                : new Color32(0, 0, 0, (byte)darkTitleAlpha);
+                ? new Color32(255, 255, 255, (byte)lightTitleAlpha).OverlayColors(color)
+                : new Color32(0, 0, 0, (byte)darkTitleAlpha).OverlayColors(color);
         }
 
         ///<summary>Returns an appropriate color to use for any 'body' text which is displayed over this <c>color</c>.
@@ -181,17 +181,17 @@ namespace OokiiTsuki.Palette
             if (lightBodyAlpha != -1)
             {
                 // If we found valid light values, use them and return
-                return new Color32(255, 255, 255, (byte)lightBodyAlpha);
+                return new Color32(255, 255, 255, (byte)lightBodyAlpha).OverlayColors(color);
             }
             int darkBodyAlpha = CalculateMinimumAlpha(Color.black, color, MIN_CONTRAST_BODY_TEXT);
             if (darkBodyAlpha != -1)
             {
                 // If we found valid dark values, use them and return
-                return new Color32(0, 0, 0, (byte)darkBodyAlpha);
+                return new Color32(0, 0, 0, (byte)darkBodyAlpha).OverlayColors(color);
             }
             return lightBodyAlpha != -1
-                ? new Color32(255, 255, 255, (byte)lightBodyAlpha)
-                : new Color32(0, 0, 0, (byte)darkBodyAlpha);
+                ? new Color32(255, 255, 255, (byte)lightBodyAlpha).OverlayColors(color)
+                : new Color32(0, 0, 0, (byte)darkBodyAlpha).OverlayColors(color);
         }
         public static int CalculateMinimumAlpha(this Color32 foreground, Color32 background, float minContrastRatio)
         {
@@ -276,6 +276,15 @@ namespace OokiiTsuki.Palette
         {
             // Luminance is the Y component
             return RGBToXYZ(color.r, color.g, color.b)[1] / 100;
+        }
+        public static Color32 OverlayColors(this Color32 c0, Color32 c1) => OverlayColors((Color)c0, (Color)c1);
+        public static Color OverlayColors(this Color c0, Color c1)
+        {
+            float a01 = (1 - c0.a) * c1.a + c0.a;
+            float r01 = ((1 - c0.a) * c1.a * c1.r + c0.a * c0.r) / a01;
+            float g01 = ((1 - c0.a) * c1.a * c1.g + c0.a * c0.g) / a01;
+            float b01 = ((1 - c0.a) * c1.a * c1.b + c0.a * c0.b) / a01;
+            return new Color(r01, g01, b01, a01);
         }
     }
 }
